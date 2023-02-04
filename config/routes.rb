@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   # get 'sessions/new'
   resources :accounts
 
+  get '/account', to: 'account#profile'
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
   get 'sessions/login'
   post   'sessions/login'
+  get 'sessions/logout'
   delete '/logout',  to: 'sessions#destroy'
 
   get '/signup' => 'accounts#new'
