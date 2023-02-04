@@ -1,8 +1,6 @@
 #handle log in log out
 class SessionsController < ApplicationController
-  before_action :authorized
-  helper_method :current_user
-  helper_method :logged_in?
+  skip_before_action :authorized
   def index
     p params
     # @account = Account.new
@@ -11,12 +9,13 @@ class SessionsController < ApplicationController
   def login
     @params = params
     @user = Account.find_by(username: params[:username])
-    @valid = @user.authenticate(params[:password])
-    if @valid
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      puts(@user.id)
     end
   end
 
-  def create
+  def logout
+    session[:user_id] = nil
   end
 end
