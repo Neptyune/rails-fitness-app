@@ -19,6 +19,10 @@ class AccountsController < ApplicationController
   def edit
   end
 
+  def profile
+
+  end
+
   # POST /accounts or /accounts.json
   def create
     @account = Account.new(account_params)
