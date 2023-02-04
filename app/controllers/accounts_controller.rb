@@ -24,7 +24,8 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
 
     if @account.save
-      format.html { redirect_to account_url(@account), notice: "Account was successfully created." }
+      # p @account.errors.count
+      redirect_to "/" , notice: "Account was successfully created."
     else
       format.html { render :new, status: :unprocessable_entity }
     end
@@ -55,6 +56,6 @@ class AccountsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def account_params
-    params.require(:account).permit(:name, :password, :email)
+    params.require(:account).permit(:name, :email, :password, :salt, :encrypted_password)
   end
 end
