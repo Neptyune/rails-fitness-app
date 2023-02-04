@@ -20,14 +20,13 @@ class AccountsController < ApplicationController
   def edit
   end
 
-  def profile
+  def dashboard
 
   end
 
   # POST /accounts or /accounts.json
   def create
     @account = Account.new(account_params)
-    puts "ACOUNT NAME #{@account.username}"
 
     if @account.save
       # p @account.errors.count
