@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
   resources :accounts
+  get '/dashboard', to: 'accounts#dashboard'
 
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
+  get '/login', to: 'sessions#login'
+  get '/logout',  to: 'sessions#logout'
+
+
+  # post '/login', to: 'sessions#login'
   get 'sessions/login'
   post 'sessions/login'
   get 'sessions/logout'
 
-  delete '/logout',  to: 'sessions#destroy'
-  get '/accounts', to: 'accounts#dashboard'
 
   get '/signup' => 'accounts#new'
 
