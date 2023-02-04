@@ -1,7 +1,18 @@
 <div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New account</h1>
+  <h1 class="font-bold text-4xl">Sign up</h1>
 
-  <%= render "form", account: @account %>
+  <%#= render "form", account: @account %>
+
+  <%= @account.errors.count %>
+  <%= form_for(@account) do |f| %>
+    <%= f.label :username  %>
+    <%= f.text_field :username, placeholder: :username %>
+    <%= f.label :email  %>
+    <%= f.email_field :email, placeholder: :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: :password %>
+    <%= submit_tag "Submit", class: "ml-2 py-3 px-5 bg-green-300 hover:bg-green-400" %>
+  <% end %>
 
   <%= link_to 'Back to accounts', accounts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
