@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'sessions/new'
 
   resources :accounts
   root "accounts#index"
