@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  skip_before_action :authorized
   before_action :set_account, only: %i[ show edit update destroy ]
 
   # GET /accounts

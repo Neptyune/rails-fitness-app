@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     @user = Account.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      puts(@user.id)
+      redirect_to '/accounts'
     end
   end
 
