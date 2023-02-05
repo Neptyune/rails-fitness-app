@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_04_175312) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_05_151136) do
   create_table "accounts", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -48,6 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_175312) do
     t.integer "workout_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "exercises_types_id"
+    t.index ["exercises_types_id"], name: "index_exercises_on_exercises_types_id"
     t.index ["workout_id"], name: "index_exercises_on_workout_id"
   end
 
