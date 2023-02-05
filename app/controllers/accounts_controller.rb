@@ -21,7 +21,8 @@ class AccountsController < ApplicationController
   end
 
   def dashboard
-
+    puts "HERE"
+    render :dashboard
   end
 
   # POST /accounts or /accounts.json
