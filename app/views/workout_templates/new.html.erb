@@ -1,0 +1,12 @@
+<% provide(:title, "Sign up") %>
+<div>
+  <%= form_for(@workout_template) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: :name %>
+    <%= f.label :public %>
+    <%= f.text_field :public, placeholder: :public%>
+    <%= f.label :day_of_week %>
+    <%= f.text_field :day_of_week, placeholder: :day_of_week%>
+    <%= submit_tag "Submit"%>
+  <% end %>
+</div>

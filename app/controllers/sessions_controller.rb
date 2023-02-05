@@ -7,15 +7,13 @@ class SessionsController < ApplicationController
   end
 
   def login
-    puts "VALIDATING------------------------------------------"
     @params = params
     @user = Account.find_by(username: params[:username])
     puts "PARAMS USERNAME: #{params[:username]}"
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      puts "REDIRECTING---------------------------------------------------"
 
-      redirect_to "/accounts"
+      redirect_to "/dashboard"
       #change to @user
     end
   end

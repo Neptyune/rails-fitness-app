@@ -74,3 +74,5 @@ end
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "bcrypt", "~> 3.1"
+
+gem 'simple_form', '~> 5.0'

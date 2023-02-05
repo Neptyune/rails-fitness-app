@@ -6,20 +6,19 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#login'
   get '/logout',  to: 'sessions#logout'
 
-
-  # post '/login', to: 'sessions#login'
   get 'sessions/login'
   post 'sessions/login'
   get 'sessions/logout'
 
+  # --- workout routes ---
+  # get 'workout_templates/new', to: "workout_templates#new"
+  # get 'workout/edit_template'
+  # get 'workout/view_templates'
+
+  resources :workout_templates
 
   get '/signup' => 'accounts#new'
 
-
   root "home#index"
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
- 
 end

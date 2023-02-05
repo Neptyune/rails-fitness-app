@@ -21,8 +21,7 @@ class AccountsController < ApplicationController
   end
 
   def dashboard
-    puts "HERE"
-    render :dashboard
+    redirect_to '/login' unless logged_in?
   end
 
   # POST /accounts or /accounts.json
