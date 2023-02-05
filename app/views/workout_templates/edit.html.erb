@@ -1,0 +1,15 @@
+<div>
+  <%= debug @workout_template %>
+  <h1>Edit workout template</h1>
+  <%= form_for(@workout_template) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: :name %>
+    <%= f.label :public %>
+    <%= f.text_field :public, placeholder: :public%>
+    <%= f.label :day_of_week %>
+    <%= f.text_field :day_of_week, placeholder: :day_of_week%>
+  <% end %>
+
+  <%= link_to "Show this workout template", @workout_template %>
+  <%= link_to "Back to workout templates", workout_templates_path %>
+</div>

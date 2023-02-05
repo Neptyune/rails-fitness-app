@@ -1,5 +1,6 @@
-<% provide(:title, "Sign up") %>
+<% provide(:title, "New workout template") %>
 <div>
+  <%= debug @workout_template %>
   <%= form_for(@workout_template) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: :name %>
