@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  skip_before_action :authorized
   before_action :set_account, only: %i[ show edit update destroy ]
 
   # GET /accounts
@@ -19,14 +20,14 @@ class AccountsController < ApplicationController
   def edit
   end
 
-  def profile
-
+  def dashboard
+    puts "HERE"
+    render :dashboard
   end
 
   # POST /accounts or /accounts.json
   def create
     @account = Account.new(account_params)
-    puts "ACOUNT NAME #{@account.username}"
 
     if @account.save
       # p @account.errors.count
