@@ -74,3 +74,7 @@ end
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "bcrypt", "~> 3.1"
+
+gem "chartkick"
+gem "groupdate"
+gem "foreigner"
